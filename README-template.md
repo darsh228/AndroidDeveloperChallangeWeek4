@@ -1,18 +1,20 @@
-# Put title of your app here
+ComposeWheather Wheather App made with Jetpack Compose
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/darsh228/AndroidDeveloperChallangeWeek4/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
+This Wheather app is completely composed in Jetpack Compose with Kotlin. This app made with compatibility for the Light and Dark Mode on Android devices.
 
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
-
+I am Android Developer since 2018 and I have heard of Jetpack Compose in Feb 2021 but never tried it. Few weeks earlier I heard of Android Developer Challenges, now it got me exited about it.
+I need to try this out for new Development purpose, And I started developing Whether app Challenge. I am proud of that I just made this app in One Day and I made and peaceful and simple UI that attracts the user.Compose
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
