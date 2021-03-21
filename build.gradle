@@ -23,6 +23,9 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven {
+            url "https://kotlin.bintray.com/kotlinx"
+        }
     }
 
     dependencies {
