@@ -18,10 +18,30 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.*
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.Card
+import androidx.compose.material.Divider
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -40,8 +60,8 @@ import androidx.compose.ui.unit.sp
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
-    var wheatheModellist: ArrayList<WheatheModel> = arrayListOf()
-    val wheatheModelDayWiselist: ArrayList<WheatheModel> = arrayListOf()
+    lateinit var wheatheModellist: ArrayList<WheatheModel>
+    lateinit var wheatheModelDayWiselist: ArrayList<WheatheModel>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,7 +95,6 @@ class MainActivity : AppCompatActivity() {
             wheatheModellist.add(model4)
             wheatheModellist.add(model5)
             wheatheModellist.add(model6)
-
 
             val wheatheModel1 = WheatheModel(
                 "14°/21°",
@@ -120,7 +139,6 @@ class MainActivity : AppCompatActivity() {
             wheatheModelDayWiselist.add(wheatheModel5)
             wheatheModelDayWiselist.add(wheatheModel6)
             wheatheModelDayWiselist.add(wheatheModel7)
-
 
             MyTheme {
                 MyApp(wheatheModellist, wheatheModelDayWiselist)
@@ -172,7 +190,6 @@ fun MyApp(
                     .fillMaxWidth()
                     .padding(15.dp),
             ) {
-
 
                 Text(
                     text = "Today",
@@ -270,7 +287,6 @@ fun MyApp(
                         WheatherDayWiseRow(items)
                     }
                 }
-
             }
         }
     }
@@ -289,9 +305,10 @@ fun WheatherDayWiseRow(wheatherModelItem: WheatheModel) {
         elevation = 10.dp,
         modifier = Modifier
             .padding(7.dp)
-            .clickable(onClick = {
-
-            })
+            .clickable(
+                onClick = {
+                }
+            )
     ) {
         Row(
             modifier = Modifier
@@ -344,10 +361,8 @@ fun WheatherDayWiseRow(wheatherModelItem: WheatheModel) {
                 fontFamily = FontFamily(Font(R.font.nunito_bold))
             )
         }
-
     }
 }
-
 
 @Composable
 fun WheatherRow(wheatherModelItem: WheatheModel) {
@@ -412,7 +427,6 @@ fun WheatherRow(wheatherModelItem: WheatheModel) {
                 fontFamily = FontFamily(Font(R.font.nunito_bold))
             )
         }
-
     }
 }
 
@@ -453,7 +467,6 @@ fun Toptemprature(img: Painter, temp: String) {
             fontFamily = FontFamily(Font(R.font.nunito_bold))
         )
     }
-
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
@@ -461,7 +474,7 @@ fun Toptemprature(img: Painter, temp: String) {
 fun LightPreview() {
 
     lateinit var wheatheModellist: ArrayList<WheatheModel>
-    val wheatheModelDayWiselist: ArrayList<WheatheModel> = arrayListOf()
+    lateinit var wheatheModelDayWiselist: ArrayList<WheatheModel>
 
     val model1 = WheatheModel(
         "21°",
@@ -491,7 +504,6 @@ fun LightPreview() {
     wheatheModellist.add(model4)
     wheatheModellist.add(model5)
     wheatheModellist.add(model6)
-
 
     val wheatheModel1 = WheatheModel(
         "14°/21°",
@@ -536,8 +548,6 @@ fun LightPreview() {
     wheatheModelDayWiselist.add(wheatheModel5)
     wheatheModelDayWiselist.add(wheatheModel6)
     wheatheModelDayWiselist.add(wheatheModel7)
-
-
 
     MyTheme {
         MyApp(wheatheModellist, wheatheModelDayWiselist)
@@ -549,7 +559,7 @@ fun LightPreview() {
 fun DarkPreview() {
 
     lateinit var wheatheModellist: ArrayList<WheatheModel>
-    val wheatheModelDayWiselist: ArrayList<WheatheModel> = arrayListOf()
+    lateinit var wheatheModelDayWiselist: ArrayList<WheatheModel>
 
     val model1 = WheatheModel(
         "21°",
@@ -579,7 +589,6 @@ fun DarkPreview() {
     wheatheModellist.add(model4)
     wheatheModellist.add(model5)
     wheatheModellist.add(model6)
-
 
     val wheatheModel1 = WheatheModel(
         "14°/21°",
@@ -624,8 +633,6 @@ fun DarkPreview() {
     wheatheModelDayWiselist.add(wheatheModel5)
     wheatheModelDayWiselist.add(wheatheModel6)
     wheatheModelDayWiselist.add(wheatheModel7)
-
-
 
     MyTheme(darkTheme = true) {
         MyApp(wheatheModellist, wheatheModelDayWiselist)
